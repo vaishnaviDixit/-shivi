@@ -1,0 +1,52 @@
+{% extends 'home.html' %}
+{% block title %}Registration{% endblock %}
+{% block body %}
+<form action="{% url 'person:register' %}" method="post">
+    {% csrf_token %}
+    <p>
+    <h3>Name</h3>
+    <input type="text" name="name" placeholder="Full Name" size="60">
+
+            </p>
+            <p>
+            <h3>E-Mail</h3>
+            <input type="email" name="email" placeholder="E-Mail" size="40"/>
+            </p>
+             <p>
+            <h3>Gender</h3>
+            <input type="radio" name="gender" value="Male"/>Male
+            <input type="radio" name="gender" value="Female"/>Female
+            </p>
+    <p>
+            <h3>Address</h3>
+            <textarea rows="5" cols="20" name="address">
+
+            </textarea>
+            </p>
+            <p>
+            <h3>Occupation</h3>
+            <select name="occupation">
+                <option value="GOV">Government Job</option>
+                <option value="PRI">Private Job</option>
+                <option value="BUS">Bussiness</option>
+                <option value="SELF">Self Employed</option>
+                <option value="UNEM">Enemployed</option>
+            </select>
+            </p>
+            <p>
+            <h3>Ex-Serviceman</h3>
+            <input type="checkbox" name="exservice" value="Yes"/>
+
+            </p>
+            <center>
+            <input type="submit" value="Register"/>
+            </center>
+    <center>
+        <h2>
+            {% if msg %}
+               <h2>  {{ msg }} </h2>
+            {% endif %}
+        </h2>
+    </center>
+</form>
+{% endblock %}

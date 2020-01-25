@@ -1,0 +1,15 @@
+
+{%  extends 'music/base.html' %}
+{% block title %}Allenhouse{% endblock %}
+{% block body %}
+            {% if all_albums %}
+                <h2>LIST OF ALBUMS</h2>
+                <ol>
+                    {% for album in all_albums %}
+                    <li><a href="{% url 'music:details' album.id %}">{{album.title}}</a></li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                 <h2>NO ALBUM's IN DATABASE</h2>
+            {% endif %}
+ {% endblock %}

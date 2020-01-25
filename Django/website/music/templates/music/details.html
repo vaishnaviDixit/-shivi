@@ -1,0 +1,13 @@
+{% extends 'music/base.html' %}
+{% block title %}Album Details {% endblock %}
+{% block body %}
+     <h1>{{ album }}</h1>
+     <hr>
+     <b>Album Name</b><br>{{album.title}}<br><br>
+     <b>Artist Name </b><br>{{ album.artist}}<br><br>
+     <center><img src="{{album.logo}}" alt="No Image " width ="300" height="300"/></center>
+     <h2>List of Songs:</h2>
+          {% for song in album.song_set.all %}
+             {{ song.title }}<br>
+          {% endfor %}
+{% endblock %}
