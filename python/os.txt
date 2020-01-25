@@ -1,0 +1,17 @@
+12 vaishnavi
+23 vaishu
+56 yash
+34 va
+3 d
+34 df
+56 gh
+45 fg
+56 g
+23 c
+45 g
+45 f
+67 g
+34,df
+45,gf
+34,df
+,fg
